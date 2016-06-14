@@ -18,7 +18,7 @@ def index():
             return 'Please enter something!'
         datas[datIndex] = request.form['text']
         datIndex += 1
-    return render_template('index.html', content = '<br/>'.join(datas))
+    return render_template('index.html', content = '<br/>'.join(datas[:datIndex] + datas[datIndex:]))
 
 
 if __name__ == '__main__':
